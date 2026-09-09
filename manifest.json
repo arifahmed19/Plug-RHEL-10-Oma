@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "arifahmed19.rhel",
+  "name": "RHEL",
+  "version": "1.0.0",
+  "author": "Arif Ahmed",
+  "license": "MIT",
+  "description": "Red Hat Enterprise Linux 10 (UBI) in the bar: one click opens a RHEL shell in your terminal, and the popup manages your RHEL containers — new shell, start, stop, remove, and one-click rebuild of the CLI-ready image (ncurses, vim, less on top of the stock UBI base).",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "RHEL",
+    "description": "RHEL 10 UBI containers in the bar: click for a terminal into RHEL, manage running containers, rebuild the image.",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "imageName": "rhel10-cli",
+      "baseImage": "registry.access.redhat.com/ubi10/ubi:latest"
+    },
+    "schema": [
+      {
+        "key": "imageName",
+        "type": "string",
+        "label": "Image tag",
+        "defaultValue": "rhel10-cli",
+        "description": "Local tag of the RHEL CLI image this widget builds and runs."
+      },
+      {
+        "key": "baseImage",
+        "type": "string",
+        "label": "Base image",
+        "defaultValue": "registry.access.redhat.com/ubi10/ubi:latest",
+        "description": "Upstream base the image is built FROM (public UBI needs no Red Hat login)."
+      }
+    ]
+  }
+}
